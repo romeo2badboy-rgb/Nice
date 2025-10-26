@@ -40,7 +40,7 @@ class VoiceCallApp {
             }
         });
         this.micBtn.addEventListener('click', () => {
-            this.showToast('Voice input coming soon!');
+            this.showToast('VOICE INPUT // COMING SOON');
         });
     }
 
@@ -63,7 +63,7 @@ class VoiceCallApp {
             personality: personality
         }));
 
-        this.showToast('Personality updated!');
+        this.showToast('PERSONALITY MATRIX UPDATED');
         this.personalityContainer.style.display = 'none';
         this.personalityInput.value = '';
     }
@@ -76,7 +76,7 @@ class VoiceCallApp {
 
         this.ws.onopen = () => {
             console.log('Connected to server');
-            this.updateStatus('Connected', true);
+            this.updateStatus('ONLINE', true);
             this.reconnectAttempts = 0;
         };
 
@@ -87,12 +87,12 @@ class VoiceCallApp {
 
         this.ws.onerror = (error) => {
             console.error('WebSocket error:', error);
-            this.updateStatus('Connection error', false);
+            this.updateStatus('CONNECTION ERROR', false);
         };
 
         this.ws.onclose = () => {
             console.log('Disconnected from server');
-            this.updateStatus('Disconnected', false);
+            this.updateStatus('OFFLINE', false);
 
             // Attempt to reconnect with exponential backoff
             if (this.reconnectAttempts < this.maxReconnectAttempts) {
@@ -169,24 +169,28 @@ class VoiceCallApp {
             case 'history_cleared':
                 this.messagesContainer.innerHTML = `
                     <div class="welcome-message">
-                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3">
+                        <svg viewBox="0 0 200 200" fill="none">
                             <defs>
-                                <linearGradient id="msgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:white;stop-opacity:0.8" />
-                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.4" />
+                                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#9d00ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <path d="M20 30 C20 25, 24 20, 30 20 L90 20 C96 20, 100 25, 100 30 L100 70 C100 76, 96 80, 90 80 L40 80 L20 100 Z"
-                                  stroke="url(#msgGrad)" stroke-width="4" fill="none"/>
-                            <circle cx="45" cy="50" r="4" fill="white" opacity="0.6"/>
-                            <circle cx="60" cy="50" r="4" fill="white" opacity="0.6"/>
-                            <circle cx="75" cy="50" r="4" fill="white" opacity="0.6"/>
-                            <circle cx="60" cy="60" r="40" stroke="white" stroke-width="1" opacity="0.2"/>
+                            <circle cx="100" cy="100" r="80" stroke="url(#heroGrad)" stroke-width="4" fill="none"/>
+                            <circle cx="100" cy="100" r="60" stroke="url(#heroGrad)" stroke-width="3" fill="none"/>
+                            <circle cx="100" cy="100" r="40" stroke="url(#heroGrad)" stroke-width="2" fill="none"/>
+                            <path d="M 60 70 L 140 70 L 140 120 L 100 120 L 80 140 L 80 120 L 60 120 Z"
+                                  stroke="url(#heroGrad)" stroke-width="4" fill="none" stroke-linejoin="round"/>
+                            <circle cx="80" cy="90" r="4" fill="#00ffff"/>
+                            <circle cx="100" cy="90" r="4" fill="#9d00ff"/>
+                            <circle cx="120" cy="90" r="4" fill="#ff00ff"/>
+                            <circle cx="100" cy="100" r="90" stroke="url(#heroGrad)" stroke-width="1" fill="none" stroke-dasharray="5,5"/>
                         </svg>
-                        <p>Start a conversation with your AI</p>
+                        <p>// INITIATE NEURAL LINK</p>
                     </div>
                 `;
-                this.showToast('Conversation cleared');
+                this.showToast('DATA CLEARED');
                 break;
 
             case 'personality_set':

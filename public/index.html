@@ -3,115 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Voice Call</title>
+    <title>CYBER VOICE // AI INTERFACE</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cyberpunk Effects -->
+    <div class="scan-line"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+    <div class="data-stream"></div>
+
     <div class="container">
         <div class="call-interface">
+            <!-- Header -->
             <div class="header">
                 <div class="profile">
                     <div class="avatar">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <svg viewBox="0 0 100 100" fill="none">
                             <defs>
-                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.6" />
+                                <linearGradient id="cyberGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <circle cx="32" cy="20" r="12" stroke="url(#avatarGrad)" stroke-width="3"/>
-                            <path d="M12 52 C12 42, 20 36, 32 36 C44 36, 52 42, 52 52"
-                                  stroke="url(#avatarGrad)" stroke-width="3" stroke-linecap="round"/>
-                            <circle cx="32" cy="32" r="28" stroke="white" stroke-width="1.5" opacity="0.3"/>
+                            <!-- Cyber Brain -->
+                            <circle cx="50" cy="35" r="20" stroke="url(#cyberGrad1)" stroke-width="3" fill="none"/>
+                            <circle cx="50" cy="35" r="15" stroke="url(#cyberGrad1)" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="35" r="5" fill="url(#cyberGrad1)"/>
+                            <!-- Neural Network Lines -->
+                            <line x1="50" y1="55" x2="35" y2="70" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <line x1="50" y1="55" x2="65" y2="70" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <line x1="35" y1="70" x2="25" y2="85" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <line x1="35" y1="70" x2="45" y2="85" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <line x1="65" y1="70" x2="55" y2="85" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <line x1="65" y1="70" x2="75" y2="85" stroke="url(#cyberGrad1)" stroke-width="2"/>
+                            <!-- Data Nodes -->
+                            <circle cx="35" cy="70" r="4" fill="#00ffff"/>
+                            <circle cx="65" cy="70" r="4" fill="#ff00ff"/>
+                            <circle cx="25" cy="85" r="3" fill="#00ffff"/>
+                            <circle cx="45" cy="85" r="3" fill="#9d00ff"/>
+                            <circle cx="55" cy="85" r="3" fill="#ff00ff"/>
+                            <circle cx="75" cy="85" r="3" fill="#00ffff"/>
                         </svg>
                     </div>
                     <div class="profile-info">
-                        <h2>AI Assistant</h2>
-                        <span class="status" id="status">Connecting...</span>
+                        <h2>CYBER AI</h2>
+                        <span class="status" id="status">INITIALIZING</span>
                     </div>
                 </div>
                 <div class="header-actions">
-                    <button class="icon-btn" id="settingsBtn" title="AI Personality">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <defs>
-                                <linearGradient id="settingsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.7" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="32" cy="32" r="8" stroke="url(#settingsGrad)" stroke-width="3"/>
-                            <path d="M32 10 L32 18 M32 46 L32 54 M10 32 L18 32 M46 32 L54 32"
-                                  stroke="url(#settingsGrad)" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M16 16 L22 22 M42 42 L48 48 M48 16 L42 22 M22 42 L16 48"
-                                  stroke="url(#settingsGrad)" stroke-width="3" stroke-linecap="round"/>
-                            <circle cx="32" cy="32" r="20" stroke="white" stroke-width="1" opacity="0.3"/>
+                    <button class="icon-btn" id="settingsBtn" title="Configure AI Personality">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#00ffff" stroke-width="4">
+                            <!-- Hexagon Settings -->
+                            <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="none"/>
+                            <circle cx="50" cy="50" r="15" fill="none"/>
+                            <line x1="50" y1="20" x2="50" y2="35"/>
+                            <line x1="50" y1="65" x2="50" y2="80"/>
+                            <line x1="30" y1="30" x2="40" y2="40"/>
+                            <line x1="60" y1="60" x2="70" y2="70"/>
+                            <line x1="70" y1="30" x2="60" y2="40"/>
+                            <line x1="40" y1="60" x2="30" y2="70"/>
                         </svg>
                     </button>
-                    <button class="icon-btn" id="clearBtn" title="Clear conversation">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <defs>
-                                <linearGradient id="clearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.7" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M 15 15 L 15 25 L 25 25" stroke="url(#clearGrad)" stroke-width="3"
-                                  stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M 15 20 C 15 15, 18 10, 24 8 C 35 5, 46 10, 50 20 C 54 30, 50 42, 40 48 C 30 54, 18 50, 15 42"
-                                  stroke="url(#clearGrad)" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M 28 28 L 36 36 M 36 28 L 28 36" stroke="white" stroke-width="2.5"
-                                  stroke-linecap="round" opacity="0.5"/>
+                    <button class="icon-btn" id="clearBtn" title="Clear Data">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#ff00ff" stroke-width="4">
+                            <!-- Cyber Refresh -->
+                            <path d="M 20 40 Q 20 15, 50 15 Q 80 15, 80 40" stroke-linecap="round"/>
+                            <path d="M 80 60 Q 80 85, 50 85 Q 20 85, 20 60" stroke-linecap="round"/>
+                            <polyline points="15,35 20,40 25,35" fill="#ff00ff"/>
+                            <polyline points="75,65 80,60 85,65" fill="#ff00ff"/>
+                            <!-- Data Chunks -->
+                            <circle cx="50" cy="40" r="3" fill="#00ffff"/>
+                            <circle cx="50" cy="60" r="3" fill="#ff00ff"/>
                         </svg>
                     </button>
                 </div>
             </div>
 
+            <!-- Personality Configuration -->
             <div class="personality-container" id="personalityContainer" style="display: none;">
                 <div class="personality-wrapper">
                     <div class="personality-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M24 14 C28 14, 30 16, 30 20 C30 24, 28 26, 24 26 C20 26, 18 24, 18 20 C18 16, 20 14, 24 14"
-                                  stroke="white" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="24" cy="24" r="18" stroke="white" stroke-width="1.5" opacity="0.3"/>
-                            <path d="M18 32 C18 32, 20 28, 24 28 C28 28, 30 32, 30 32"
-                                  stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#ff00ff" stroke-width="3">
+                            <!-- Cyber Face -->
+                            <circle cx="50" cy="50" r="35"/>
+                            <circle cx="35" cy="45" r="5" fill="#ff00ff"/>
+                            <circle cx="65" cy="45" r="5" fill="#00ffff"/>
+                            <path d="M 30 65 Q 50 75, 70 65" stroke-linecap="round"/>
+                            <!-- Tech Lines -->
+                            <line x1="15" y1="50" x2="28" y2="50"/>
+                            <line x1="72" y1="50" x2="85" y2="50"/>
                         </svg>
                     </div>
                     <input
                         type="text"
                         id="personalityInput"
-                        placeholder="You are a funny comedian who loves making jokes..."
+                        placeholder="DEFINE AI PERSONALITY MATRIX..."
                         autocomplete="off"
                     >
                     <button class="personality-btn" id="setPersonalityBtn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M5 13 L9 17 L19 7" stroke="black" stroke-width="3"
-                                  stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#000" stroke-width="8">
+                            <polyline points="20,50 40,70 80,30" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                 </div>
             </div>
 
+            <!-- Messages Container -->
             <div class="messages-container" id="messagesContainer">
                 <div class="welcome-message">
-                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3">
+                    <svg viewBox="0 0 200 200" fill="none">
                         <defs>
-                            <linearGradient id="msgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:white;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:white;stop-opacity:0.4" />
+                            <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#9d00ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <path d="M20 30 C20 25, 24 20, 30 20 L90 20 C96 20, 100 25, 100 30 L100 70 C100 76, 96 80, 90 80 L40 80 L20 100 Z"
-                              stroke="url(#msgGrad)" stroke-width="4" fill="none"/>
-                        <circle cx="45" cy="50" r="4" fill="white" opacity="0.6"/>
-                        <circle cx="60" cy="50" r="4" fill="white" opacity="0.6"/>
-                        <circle cx="75" cy="50" r="4" fill="white" opacity="0.6"/>
-                        <circle cx="60" cy="60" r="40" stroke="white" stroke-width="1" opacity="0.2"/>
+                        <!-- Cyber Communication Symbol -->
+                        <circle cx="100" cy="100" r="80" stroke="url(#heroGrad)" stroke-width="4" fill="none"/>
+                        <circle cx="100" cy="100" r="60" stroke="url(#heroGrad)" stroke-width="3" fill="none"/>
+                        <circle cx="100" cy="100" r="40" stroke="url(#heroGrad)" stroke-width="2" fill="none"/>
+                        <!-- Message Icon -->
+                        <path d="M 60 70 L 140 70 L 140 120 L 100 120 L 80 140 L 80 120 L 60 120 Z"
+                              stroke="url(#heroGrad)" stroke-width="4" fill="none" stroke-linejoin="round"/>
+                        <!-- Data Points -->
+                        <circle cx="80" cy="90" r="4" fill="#00ffff"/>
+                        <circle cx="100" cy="90" r="4" fill="#9d00ff"/>
+                        <circle cx="120" cy="90" r="4" fill="#ff00ff"/>
+                        <!-- Orbital Lines -->
+                        <circle cx="100" cy="100" r="90" stroke="url(#heroGrad)" stroke-width="1" fill="none" stroke-dasharray="5,5"/>
                     </svg>
-                    <p>Start a conversation with your AI</p>
+                    <p>// INITIATE NEURAL LINK</p>
                 </div>
             </div>
 
+            <!-- Audio Visualizer -->
             <div class="audio-visualizer" id="audioVisualizer">
                 <div class="wave-bar"></div>
                 <div class="wave-bar"></div>
@@ -120,36 +149,47 @@
                 <div class="wave-bar"></div>
                 <div class="wave-bar"></div>
                 <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
             </div>
 
+            <!-- Input Container -->
             <div class="input-container">
                 <div class="input-wrapper">
-                    <button class="mic-btn" id="micBtn" title="Voice input (coming soon)">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <rect x="19" y="10" width="10" height="18" rx="5" stroke="white" stroke-width="2.5"/>
-                            <path d="M14 24 C14 29, 18 34, 24 34 C30 34, 34 29, 34 24"
-                                  stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="24" y1="34" x2="24" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="18" y1="42" x2="30" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <button class="mic-btn" id="micBtn" title="Voice Input">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#ff00ff" stroke-width="4">
+                            <!-- Cyber Microphone -->
+                            <rect x="40" y="20" width="20" height="35" rx="10" />
+                            <path d="M 25 50 Q 25 70, 50 70 Q 75 70, 75 50" stroke-linecap="round"/>
+                            <line x1="50" y1="70" x2="50" y2="85"/>
+                            <line x1="35" y1="85" x2="65" y2="85" stroke-linecap="round"/>
+                            <!-- Tech Details -->
+                            <circle cx="50" cy="30" r="3" fill="#ff00ff"/>
+                            <circle cx="50" cy="45" r="3" fill="#00ffff"/>
                         </svg>
                     </button>
                     <input
                         type="text"
                         id="messageInput"
-                        placeholder="Type your message..."
+                        placeholder="// TRANSMIT DATA..."
                         autocomplete="off"
                     >
                     <button class="send-btn" id="sendBtn">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3">
+                        <svg viewBox="0 0 100 100" fill="none">
                             <defs>
                                 <linearGradient id="sendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+                                    <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <path d="M10 32 L54 10 L32 54 L28 36 L10 32 Z"
-                                  fill="url(#sendGrad)" stroke="black" stroke-width="2" stroke-linejoin="round"/>
-                            <line x1="54" y1="10" x2="28" y2="36" stroke="black" stroke-width="1.5" opacity="0.3"/>
+                            <!-- Cyber Send Arrow -->
+                            <path d="M 20 50 L 80 20 L 60 50 L 80 80 Z"
+                                  fill="url(#sendGrad)" stroke="url(#sendGrad)" stroke-width="2" stroke-linejoin="round"/>
+                            <line x1="60" y1="50" x2="20" y2="50" stroke="url(#sendGrad)" stroke-width="3"/>
+                            <!-- Energy Effect -->
+                            <circle cx="80" cy="20" r="5" fill="#00ffff" opacity="0.6"/>
+                            <circle cx="80" cy="80" r="5" fill="#ff00ff" opacity="0.6"/>
                         </svg>
                     </button>
                 </div>
