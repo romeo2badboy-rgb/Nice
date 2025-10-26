@@ -433,6 +433,22 @@ body::before {
     align-items: center;
 }
 
+.personality-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.personality-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
 .personality-wrapper input {
     flex: 1;
     background: rgba(255, 255, 255, 0.1);
@@ -458,8 +474,9 @@ body::before {
 }
 
 .personality-btn {
-    padding: 14px 28px;
-    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
     color: #000000;
     border: none;
@@ -470,6 +487,15 @@ body::before {
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.personality-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .personality-btn::before {
@@ -523,6 +549,8 @@ body::before {
 .wave-bar:nth-child(3) { animation-delay: 0.2s; }
 .wave-bar:nth-child(4) { animation-delay: 0.3s; }
 .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+.wave-bar:nth-child(6) { animation-delay: 0.5s; }
+.wave-bar:nth-child(7) { animation-delay: 0.6s; }
 
 @keyframes wave {
     0%, 100% {
@@ -547,10 +575,34 @@ body::before {
     align-items: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 28px;
-    padding: 10px 10px 10px 24px;
+    padding: 10px 10px 10px 10px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     backdrop-filter: blur(10px);
+}
+
+.mic-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+}
+
+.mic-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.mic-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 .input-wrapper:focus-within {

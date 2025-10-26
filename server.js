@@ -54,17 +54,23 @@ wss.on('connection', (ws) => {
         const history = chatHistory.get(sessionId) || [];
         const personality = userPersonalities.get(sessionId) || "You are a helpful, friendly, and intelligent AI assistant.";
 
+        // Add personality as first system message in history
+        const messagesWithPersonality = [
+          { role: 'user', content: `System: ${personality}` },
+          { role: 'model', content: 'Understood. I will follow this personality.' },
+          ...history
+        ];
+
         // Generate AI response using Gemini with personality
         const chat = model.startChat({
-          history: history.map(h => ({
+          history: messagesWithPersonality.map(h => ({
             role: h.role,
             parts: [{ text: h.content }]
           })),
           generationConfig: {
             maxOutputTokens: 200,
             temperature: 0.9,
-          },
-          systemInstruction: personality
+          }
         });
 
         const result = await chat.sendMessage(userMessage);

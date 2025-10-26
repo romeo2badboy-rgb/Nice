@@ -18,6 +18,7 @@ class VoiceCallApp {
         this.personalityContainer = document.getElementById('personalityContainer');
         this.personalityInput = document.getElementById('personalityInput');
         this.setPersonalityBtn = document.getElementById('setPersonalityBtn');
+        this.micBtn = document.getElementById('micBtn');
 
         this.setupEventListeners();
         this.connectWebSocket();
@@ -37,6 +38,9 @@ class VoiceCallApp {
             if (e.key === 'Enter') {
                 this.setPersonality();
             }
+        });
+        this.micBtn.addEventListener('click', () => {
+            this.showToast('Voice input coming soon!');
         });
     }
 
@@ -165,10 +169,21 @@ class VoiceCallApp {
             case 'history_cleared':
                 this.messagesContainer.innerHTML = `
                     <div class="welcome-message">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3">
+                            <defs>
+                                <linearGradient id="msgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:white;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.4" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M20 30 C20 25, 24 20, 30 20 L90 20 C96 20, 100 25, 100 30 L100 70 C100 76, 96 80, 90 80 L40 80 L20 100 Z"
+                                  stroke="url(#msgGrad)" stroke-width="4" fill="none"/>
+                            <circle cx="45" cy="50" r="4" fill="white" opacity="0.6"/>
+                            <circle cx="60" cy="50" r="4" fill="white" opacity="0.6"/>
+                            <circle cx="75" cy="50" r="4" fill="white" opacity="0.6"/>
+                            <circle cx="60" cy="60" r="40" stroke="white" stroke-width="1" opacity="0.2"/>
                         </svg>
-                        <p>Start a conversation</p>
+                        <p>Start a conversation with your AI</p>
                     </div>
                 `;
                 this.showToast('Conversation cleared');

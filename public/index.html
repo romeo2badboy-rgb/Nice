@@ -12,9 +12,17 @@
             <div class="header">
                 <div class="profile">
                     <div class="avatar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <defs>
+                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.6" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="32" cy="20" r="12" stroke="url(#avatarGrad)" stroke-width="3"/>
+                            <path d="M12 52 C12 42, 20 36, 32 36 C44 36, 52 42, 52 52"
+                                  stroke="url(#avatarGrad)" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="28" stroke="white" stroke-width="1.5" opacity="0.3"/>
                         </svg>
                     </div>
                     <div class="profile-info">
@@ -24,16 +32,35 @@
                 </div>
                 <div class="header-actions">
                     <button class="icon-btn" id="settingsBtn" title="AI Personality">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
-                            <path d="m5 5 4 4m6 0 4 4M5 19l4-4m6 0 4-4"></path>
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <defs>
+                                <linearGradient id="settingsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.7" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="32" cy="32" r="8" stroke="url(#settingsGrad)" stroke-width="3"/>
+                            <path d="M32 10 L32 18 M32 46 L32 54 M10 32 L18 32 M46 32 L54 32"
+                                  stroke="url(#settingsGrad)" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M16 16 L22 22 M42 42 L48 48 M48 16 L42 22 M22 42 L16 48"
+                                  stroke="url(#settingsGrad)" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="20" stroke="white" stroke-width="1" opacity="0.3"/>
                         </svg>
                     </button>
                     <button class="icon-btn" id="clearBtn" title="Clear conversation">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="1 4 1 10 7 10"></polyline>
-                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <defs>
+                                <linearGradient id="clearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:white;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:white;stop-opacity:0.7" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 15 15 L 15 25 L 25 25" stroke="url(#clearGrad)" stroke-width="3"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M 15 20 C 15 15, 18 10, 24 8 C 35 5, 46 10, 50 20 C 54 30, 50 42, 40 48 C 30 54, 18 50, 15 42"
+                                  stroke="url(#clearGrad)" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 28 28 L 36 36 M 36 28 L 28 36" stroke="white" stroke-width="2.5"
+                                  stroke-linecap="round" opacity="0.5"/>
                         </svg>
                     </button>
                 </div>
@@ -41,22 +68,47 @@
 
             <div class="personality-container" id="personalityContainer" style="display: none;">
                 <div class="personality-wrapper">
+                    <div class="personality-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M24 14 C28 14, 30 16, 30 20 C30 24, 28 26, 24 26 C20 26, 18 24, 18 20 C18 16, 20 14, 24 14"
+                                  stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="18" stroke="white" stroke-width="1.5" opacity="0.3"/>
+                            <path d="M18 32 C18 32, 20 28, 24 28 C28 28, 30 32, 30 32"
+                                  stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <input
                         type="text"
                         id="personalityInput"
-                        placeholder="e.g., You are a funny comedian who loves making jokes..."
+                        placeholder="You are a funny comedian who loves making jokes..."
                         autocomplete="off"
                     >
-                    <button class="personality-btn" id="setPersonalityBtn">Set</button>
+                    <button class="personality-btn" id="setPersonalityBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 13 L9 17 L19 7" stroke="black" stroke-width="3"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
             <div class="messages-container" id="messagesContainer">
                 <div class="welcome-message">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3">
+                        <defs>
+                            <linearGradient id="msgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:white;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:white;stop-opacity:0.4" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 30 C20 25, 24 20, 30 20 L90 20 C96 20, 100 25, 100 30 L100 70 C100 76, 96 80, 90 80 L40 80 L20 100 Z"
+                              stroke="url(#msgGrad)" stroke-width="4" fill="none"/>
+                        <circle cx="45" cy="50" r="4" fill="white" opacity="0.6"/>
+                        <circle cx="60" cy="50" r="4" fill="white" opacity="0.6"/>
+                        <circle cx="75" cy="50" r="4" fill="white" opacity="0.6"/>
+                        <circle cx="60" cy="60" r="40" stroke="white" stroke-width="1" opacity="0.2"/>
                     </svg>
-                    <p>Start a conversation</p>
+                    <p>Start a conversation with your AI</p>
                 </div>
             </div>
 
@@ -66,10 +118,21 @@
                 <div class="wave-bar"></div>
                 <div class="wave-bar"></div>
                 <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
             </div>
 
             <div class="input-container">
                 <div class="input-wrapper">
+                    <button class="mic-btn" id="micBtn" title="Voice input (coming soon)">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <rect x="19" y="10" width="10" height="18" rx="5" stroke="white" stroke-width="2.5"/>
+                            <path d="M14 24 C14 29, 18 34, 24 34 C30 34, 34 29, 34 24"
+                                  stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="24" y1="34" x2="24" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="18" y1="42" x2="30" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
                     <input
                         type="text"
                         id="messageInput"
@@ -77,9 +140,16 @@
                         autocomplete="off"
                     >
                     <button class="send-btn" id="sendBtn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3">
+                            <defs>
+                                <linearGradient id="sendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M10 32 L54 10 L32 54 L28 36 L10 32 Z"
+                                  fill="url(#sendGrad)" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                            <line x1="54" y1="10" x2="28" y2="36" stroke="black" stroke-width="1.5" opacity="0.3"/>
                         </svg>
                     </button>
                 </div>
