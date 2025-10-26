@@ -29,8 +29,9 @@ const elevenlabs = new ElevenLabsClient({
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
 
-// Chat history for context
+// Chat history and personality for context
 const chatHistory = new Map();
+const userPersonalities = new Map();
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
@@ -49,19 +50,21 @@ wss.on('connection', (ws) => {
         // Send acknowledgment
         ws.send(JSON.stringify({ type: 'processing', message: 'Thinking...' }));
 
-        // Get chat history
+        // Get chat history and personality
         const history = chatHistory.get(sessionId) || [];
+        const personality = userPersonalities.get(sessionId) || "You are a helpful, friendly, and intelligent AI assistant.";
 
-        // Generate AI response using Gemini
+        // Generate AI response using Gemini with personality
         const chat = model.startChat({
           history: history.map(h => ({
             role: h.role,
             parts: [{ text: h.content }]
           })),
           generationConfig: {
-            maxOutputTokens: 150,
+            maxOutputTokens: 200,
             temperature: 0.9,
           },
+          systemInstruction: personality
         });
 
         const result = await chat.sendMessage(userMessage);
@@ -109,6 +112,13 @@ wss.on('connection', (ws) => {
       } else if (data.type === 'clear_history') {
         chatHistory.set(sessionId, []);
         ws.send(JSON.stringify({ type: 'history_cleared' }));
+      } else if (data.type === 'set_personality') {
+        userPersonalities.set(sessionId, data.personality);
+        chatHistory.set(sessionId, []); // Clear history when personality changes
+        ws.send(JSON.stringify({
+          type: 'personality_set',
+          message: 'Personality updated successfully'
+        }));
       }
     } catch (error) {
       console.error('Error:', error);
@@ -122,6 +132,7 @@ wss.on('connection', (ws) => {
   ws.on('close', () => {
     console.log('Client disconnected');
     chatHistory.delete(sessionId);
+    userPersonalities.delete(sessionId);
   });
 });
 

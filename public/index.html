@@ -22,12 +22,33 @@
                         <span class="status" id="status">Connecting...</span>
                     </div>
                 </div>
-                <button class="icon-btn" id="clearBtn" title="Clear conversation">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="1 4 1 10 7 10"></polyline>
-                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-                    </svg>
-                </button>
+                <div class="header-actions">
+                    <button class="icon-btn" id="settingsBtn" title="AI Personality">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
+                            <path d="m5 5 4 4m6 0 4 4M5 19l4-4m6 0 4-4"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" id="clearBtn" title="Clear conversation">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="1 4 1 10 7 10"></polyline>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="personality-container" id="personalityContainer" style="display: none;">
+                <div class="personality-wrapper">
+                    <input
+                        type="text"
+                        id="personalityInput"
+                        placeholder="e.g., You are a funny comedian who loves making jokes..."
+                        autocomplete="off"
+                    >
+                    <button class="personality-btn" id="setPersonalityBtn">Set</button>
+                </div>
             </div>
 
             <div class="messages-container" id="messagesContainer">

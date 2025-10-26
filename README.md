@@ -4,14 +4,17 @@ A real-time AI voice call application powered by Gemini AI and Eleven Labs text-
 
 ## Features
 
-- Real-time voice responses using Eleven Labs TTS
-- AI conversation powered by Gemini 2.0 Flash
-- WebSocket-based communication for instant responses
-- Modern, beautiful UI with smooth animations
-- SVG icons throughout the interface
-- Audio visualization during playback
-- Conversation history with context awareness
-- Fully responsive design
+- **Real-time Voice Responses**: Instant TTS using Eleven Labs Turbo v2.5
+- **AI Conversation**: Powered by Gemini 2.0 Flash for ultra-fast responses
+- **Custom AI Personality**: Set your own AI personality (funny, professional, etc.)
+- **WebSocket Communication**: Zero-latency real-time messaging
+- **Glassmorphism Design**: Modern black & white glass theme
+- **Powerful Animations**: Smooth, eye-catching transitions and effects
+- **Audio Visualization**: Live wave animation during voice playback
+- **Conversation Context**: AI remembers your conversation history
+- **Toast Notifications**: Clean feedback messages
+- **Auto-Reconnect**: Automatic reconnection with exponential backoff
+- **Fully Responsive**: Works perfectly on desktop and mobile
 
 ## Tech Stack
 
@@ -65,13 +68,38 @@ npm start
 
 ## How It Works
 
-1. User types a message in the chat interface
-2. Message is sent via WebSocket to the server
-3. Gemini AI generates a contextual response
-4. Response text is displayed in the chat
-5. Eleven Labs converts the text to speech
-6. Audio is streamed back and played instantly
-7. Conversation history is maintained for context
+1. **User Input**: Type a message in the chat interface
+2. **WebSocket**: Message is sent instantly via WebSocket
+3. **AI Processing**: Gemini 2.0 Flash generates contextual response
+4. **Text Display**: Response appears in chat immediately
+5. **TTS Conversion**: Eleven Labs Turbo converts text to speech
+6. **Audio Streaming**: Audio streams back and plays instantly
+7. **Context Memory**: Conversation history maintained for better responses
+8. **Custom Personality**: AI follows your custom personality settings
+
+## Custom Personality
+
+Click the settings icon (⚙️) in the header to set a custom AI personality:
+
+**Examples:**
+- "You are a funny comedian who loves making jokes"
+- "You are a professional business consultant"
+- "You are a friendly teacher who explains things simply"
+- "You are a wise philosopher who gives deep insights"
+
+## UI Features
+
+### Glassmorphism Theme
+- **Black & White**: Classic, elegant color scheme
+- **Glass Effect**: Frosted glass morphism with blur
+- **Dynamic Background**: Animated gradient background
+- **Smooth Animations**: Powerful CSS animations throughout
+
+### Interactions
+- **Send Button**: Hover to see rotation effect
+- **Message Bubbles**: Slide-up animation on arrival
+- **Audio Visualizer**: Animated wave bars during playback
+- **Toast Messages**: Elegant notification toasts
 
 ## API Keys Setup
 
@@ -85,13 +113,27 @@ npm start
 - Create a new API key
 - Enable the Gemini API
 
-## Performance Features
+## Performance Optimizations
 
-- Streaming audio for minimal latency
-- WebSocket for real-time communication
-- Optimized Gemini settings for fast responses
-- Turbo TTS model for quick speech generation
-- Client-side audio buffering
+- **Streaming Audio**: Minimal latency audio playback
+- **WebSocket Protocol**: Real-time bidirectional communication
+- **Optimized AI**: Gemini 2.0 Flash (fastest model)
+- **Turbo TTS**: Eleven Labs Turbo v2.5 (fastest voice)
+- **Audio Preloading**: Instant playback with preload
+- **Auto Reconnect**: Exponential backoff strategy
+- **Request Animation Frame**: Smooth scroll animations
+- **Optimized Base64**: Fast audio decoding
+
+## Important: ElevenLabs API Key Issue
+
+**Error**: "Unusual activity detected" on free tier
+
+**Solutions:**
+1. **Upgrade to Paid Plan**: Remove the free tier restriction
+2. **New API Key**: Create a new ElevenLabs account with a different IP
+3. **Disable VPN/Proxy**: Free tier doesn't work with VPNs
+
+The app will still work but TTS will fail. Text responses from Gemini AI work perfectly.
 
 ## Browser Support
 
