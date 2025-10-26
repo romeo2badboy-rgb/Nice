@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tts-voice-call-app
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ELEVENLABS_API_KEY
+        value: sk_fe8948f4cf0f980e2a276e26e93483dd024191595398f903
+      - key: ELEVENLABS_VOICE_ID
+        value: uyfkySFC5J00qZ6iLAdh
+      - key: GEMINI_API_KEY
+        value: AIzaSyDBFlxfPjFDUdTAOnhocXgC4vBGEWfgk14
+      - key: PORT
+        value: 10000
