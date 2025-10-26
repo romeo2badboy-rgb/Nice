@@ -6,7 +6,7 @@ services:
     startCommand: npm start
     envVars:
       - key: ELEVENLABS_API_KEY
-        value: sk_fe8948f4cf0f980e2a276e26e93483dd024191595398f903
+        value: sk_9006b80a1beaa0d6489e5e3d4ff86b12eeef0b14729aa8d8
       - key: ELEVENLABS_VOICE_ID
         value: uyfkySFC5J00qZ6iLAdh
       - key: GEMINI_API_KEY
