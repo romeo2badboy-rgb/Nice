@@ -1,0 +1,24 @@
+{
+  "name": "tts-voice-call-app",
+  "version": "1.0.0",
+  "description": "Real-time TTS voice call app with Gemini AI and Eleven Labs",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm install && npm run build"
+  },
+  "keywords": ["tts", "voice", "elevenlabs", "gemini", "ai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.16.0",
+    "cors": "^2.8.5",
+    "@elevenlabs/elevenlabs-js": "^2.20.1",
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.3.1"
+  }
+}
